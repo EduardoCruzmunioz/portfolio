@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/ui/Header';
+import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
+
+export async function getStaticPaths() {
+  // Astro lee los archivos MD de proyectos y genera las rutas (URLs)
+  const projectEntries = await getCollection('projects');
+  return projectEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout 
+  title={`${entry.data.title} | Eduardo Cruz`}
+  description={entry.data.description}
+>
+  <Header client:load />
+
+  {/* Botón flotante para volver (fijo en la esquina superior izquierda) */}
+  <a href="/#projects" class="fixed top-28 left-4 lg:left-8 z-40 group flex items-center justify-center gap-3 px-4 py-2 bg-background/90 backdrop-blur-md border border-border text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-all font-mono text-xs md:text-sm shadow-sm">
+    <ArrowLeft class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+    <span class="hidden sm:inline">VOLVER_A_PROYECTOS</span>
+    <span class="sm:hidden">VOLVER</span>
+  </a>
+
+  <main class="max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-24">
+
+    <header class="mb-16">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-balance">
+        {entry.data.title}
+      </h1>
+      <p class="text-xl text-muted-foreground mb-8 text-balance">
+        {entry.data.description}
+      </p>
+      
+      <div class="flex flex-wrap gap-2 mb-8">
+        {entry.data.technologies.map((tech: string) => (
+          <span class="px-3 py-1.5 rounded-lg border border-border bg-muted/30 text-sm font-mono text-foreground">
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 pt-8 border-t border-border">
+        {entry.data.githubUrl && (
+          <a href={entry.data.githubUrl} target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-5 py-2.5 bg-transparent border-2 border-foreground text-foreground font-mono text-sm hover:bg-foreground hover:text-background transition-colors">
+            <Github class="w-4 h-4" />
+            [ CÓDIGO_FUENTE ]
+          </a>
+        )}
+        {entry.data.liveUrl && (
+          <a href={entry.data.liveUrl} target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-5 py-2.5 bg-foreground border-2 border-foreground text-background font-mono text-sm hover:bg-transparent hover:text-foreground transition-colors">
+            <ExternalLink class="w-4 h-4" />
+            [ LIVE_DEMO ]
+          </a>
+        )}
+      </div>
+    </header>
+
+    {/* Aquí es donde se inyecta el contenido del Markdown */}
+    <article class="prose-custom">
+      <Content />
+    </article>
+    
+  </main>
+  
+  <footer class="py-10 border-t border-border flex flex-col items-center justify-center text-muted-foreground text-sm font-mono text-center px-4 mt-20">
+    <p>&copy; {new Date().getFullYear()} Eduardo Cruz.</p>
+  </footer>
+</Layout>

@@ -1,0 +1,19 @@
+# node_modules
+node_modules/
+
+# build output
+dist/
+.vercel
+.netlify
+.output
+
+# env files
+.env
+.env.*
+!.env.example
+
+# mac
+.DS_Store
+
+# astro
+.astro/

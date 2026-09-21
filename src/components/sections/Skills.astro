@@ -1,0 +1,39 @@
+---
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: ["HTML5 / CSS3", "JavaScript", "TypeScript", "React", "Tailwind CSS"]
+  },
+  {
+    title: "Backend & Datos",
+    skills: ["Java", "MySQL", "PostgreSQL", "MongoDB", "Firebase"]
+  },
+  {
+    title: "Sistemas & Herramientas",
+    skills: ["Linux / Windows", "Git / GitHub", "Docker", "Jira", "IntelliJ IDEA / VS Code", "SSH", "Postman"]
+  }
+];
+---
+<section id="skills" class="py-20 border-t border-border">
+  <div class="mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Skills & Tecnologías</h2>
+    <p class="text-muted-foreground text-lg max-w-2xl">
+      Mi caja de herramientas. Combinando conocimientos de desarrollo (DAM) y sistemas (SMR) para construir aplicaciones web eficientes de principio a fin.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {skillCategories.map(category => (
+      <div class="p-8 rounded-2xl border border-border bg-background hover:border-foreground/30 transition-colors">
+        <h3 class="text-xl font-semibold mb-6">{category.title}</h3>
+        <div class="flex flex-wrap gap-2.5">
+          {category.skills.map(skill => (
+            <span class="px-3 py-1.5 rounded-lg border border-border bg-muted/40 text-sm font-mono text-foreground">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
