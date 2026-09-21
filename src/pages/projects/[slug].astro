@@ -24,7 +24,7 @@ const { Content } = await entry.render();
 
   {/* Botón flotante para volver (fijo en la esquina superior izquierda) */}
   <a href="/#projects" class="fixed top-28 left-4 lg:left-8 z-40 group flex items-center justify-center gap-3 px-4 py-2 bg-background/90 backdrop-blur-md border border-border text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-all font-mono text-xs md:text-sm shadow-sm">
-    <ArrowLeft class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
     <span class="hidden sm:inline">VOLVER_A_PROYECTOS</span>
     <span class="sm:hidden">VOLVER</span>
   </a>
@@ -50,13 +50,13 @@ const { Content } = await entry.render();
       <div class="flex flex-wrap items-center gap-4 pt-8 border-t border-border">
         {entry.data.githubUrl && (
           <a href={entry.data.githubUrl} target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-5 py-2.5 bg-transparent border-2 border-foreground text-foreground font-mono text-sm hover:bg-foreground hover:text-background transition-colors">
-            <Github class="w-4 h-4" />
+            <Github className="w-4 h-4" />
             [ CÓDIGO_FUENTE ]
           </a>
         )}
         {entry.data.liveUrl && (
           <a href={entry.data.liveUrl} target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-5 py-2.5 bg-foreground border-2 border-foreground text-background font-mono text-sm hover:bg-transparent hover:text-foreground transition-colors">
-            <ExternalLink class="w-4 h-4" />
+            <ExternalLink className="w-4 h-4" />
             [ LIVE_DEMO ]
           </a>
         )}
