@@ -30,9 +30,9 @@ export default function Header() {
         </a>
 
         {/* Navegación Desktop */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map(link => (
-            <a key={link.name} href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+            <a key={link.name} href={link.href} className="text-sm font-mono text-muted-foreground hover:text-foreground transition-colors">
               {link.name}
             </a>
           ))}
@@ -48,10 +48,10 @@ export default function Header() {
           </a>
           <button
             onClick={handleCopyEmail}
-            className="flex items-center gap-2 bg-foreground text-background px-4 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity active:scale-95"
+            className="flex items-center gap-2 bg-foreground text-background px-4 py-2.5 rounded-lg text-sm font-mono hover:opacity-90 transition-opacity active:scale-95"
           >
             {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-            <span className="font-mono">{copied ? '¡Copiado!' : 'Copiar Email'}</span>
+            <span>{copied ? '¡Copiado!' : 'Copiar Email'}</span>
           </button>
         </div>
 
@@ -70,7 +70,7 @@ export default function Header() {
         <div className="md:hidden border-t border-border bg-background px-4 py-6 flex flex-col gap-6 shadow-xl">
           <nav className="flex flex-col gap-4">
             {navLinks.map(link => (
-              <a key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)} className="text-lg text-muted-foreground hover:text-foreground transition-colors font-medium">
+              <a key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)} className="text-lg text-muted-foreground hover:text-foreground transition-colors font-mono">
                 {link.name}
               </a>
             ))}
@@ -87,10 +87,10 @@ export default function Header() {
             </div>
             <button
               onClick={handleCopyEmail}
-              className="flex justify-center items-center gap-2 bg-foreground text-background px-4 py-3 rounded-lg text-base font-medium active:scale-95 transition-transform"
+              className="flex justify-center items-center gap-2 bg-foreground text-background px-4 py-3 rounded-lg text-base font-mono active:scale-95 transition-transform"
             >
               {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-              <span className="font-mono">{copied ? '¡Copiado!' : 'Copiar Email'}</span>
+              <span>{copied ? '¡Copiado!' : 'Copiar Email'}</span>
             </button>
           </div>
         </div>
