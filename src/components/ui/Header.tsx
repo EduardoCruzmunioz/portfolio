@@ -48,10 +48,10 @@ export default function Header() {
           </a>
           <button
             onClick={handleCopyEmail}
-            className="flex items-center gap-2 bg-foreground border-2 border-foreground text-background px-4 py-2 font-mono text-sm uppercase hover:bg-transparent hover:text-foreground transition-colors active:scale-95"
+            className="flex items-center gap-2 bg-foreground text-background px-4 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity active:scale-95"
           >
             {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-            <span>{copied ? '[ COPIADO ]' : '[ COPIAR_EMAIL ]'}</span>
+            <span className="font-mono">{copied ? '¡Copiado!' : 'Copiar Email'}</span>
           </button>
         </div>
 
@@ -87,10 +87,10 @@ export default function Header() {
             </div>
             <button
               onClick={handleCopyEmail}
-              className="flex justify-center items-center gap-2 bg-foreground border-2 border-foreground text-background px-4 py-3 font-mono text-sm uppercase hover:bg-transparent hover:text-foreground transition-colors active:scale-95"
+              className="flex justify-center items-center gap-2 bg-foreground text-background px-4 py-3 rounded-lg text-base font-medium active:scale-95 transition-transform"
             >
               {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
-              <span>{copied ? '[ COPIADO ]' : '[ COPIAR_EMAIL ]'}</span>
+              <span className="font-mono">{copied ? '¡Copiado!' : 'Copiar Email'}</span>
             </button>
           </div>
         </div>
