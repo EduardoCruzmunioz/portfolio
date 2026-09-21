@@ -31,17 +31,17 @@ const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
 
           <div class="flex items-center gap-4 pt-6 border-t border-border mt-auto">
             {project.data.githubUrl && (
-              <a href={project.data.githubUrl} target="_blank" rel="noopener noreferrer" class="p-2.5 border border-border bg-muted/10 text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-colors" aria-label="Ver código">
+              <a href={project.data.githubUrl} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg border border-border bg-muted/10 text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-colors" aria-label="Ver código">
                 <Github className="w-5 h-5" />
               </a>
             )}
             {project.data.liveUrl && (
-              <a href={project.data.liveUrl} target="_blank" rel="noopener noreferrer" class="p-2.5 border border-border bg-muted/10 text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-colors" aria-label="Visitar demo">
+              <a href={project.data.liveUrl} target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg border border-border bg-muted/10 text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-colors" aria-label="Visitar demo">
                 <ExternalLink className="w-5 h-5" />
               </a>
             )}
-            <a href={`/projects/${project.slug}`} class="ml-auto inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-mono text-sm hover:opacity-90 transition-opacity">
-              LEER_CASO -&gt;
+            <a href={`/projects/${project.slug}`} class="ml-auto inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-lg font-mono text-sm hover:opacity-90 transition-opacity">
+              Leer caso -&gt;
             </a>
           </div>
         </div>
