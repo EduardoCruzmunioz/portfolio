@@ -16,7 +16,7 @@ import { Briefcase, GraduationCap, Download } from 'lucide-react';
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
       <div>
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Currículum Vitae</h1>
-        <p class="text-xl text-muted-foreground">Mi trayectoria académica y profesional al detalle.</p>
+        <p class="text-xl text-muted-foreground">Técnico de Soporte IT | Desarrollador Junior</p>
       </div>
       <a href="/cv-eduardo-cruz.pdf" download class="inline-flex items-center justify-center gap-2 bg-foreground text-background px-6 py-3 rounded-lg font-mono text-sm hover:opacity-90 transition-opacity">
         <Download className="w-4 h-4" />
@@ -31,35 +31,54 @@ import { Briefcase, GraduationCap, Download } from 'lucide-react';
       <div class="md:col-span-1 space-y-10">
         
         <section>
-          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Perfil</h2>
-          <p class="text-muted-foreground leading-relaxed text-sm">
-            Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) y Sistemas Microinformáticos y Redes (SMR). Apasionado por la creación de arquitecturas sólidas y el desarrollo de soluciones de software eficientes que resuelvan problemas reales.
+          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Perfil Profesional</h2>
+          <p class="text-muted-foreground leading-relaxed text-sm text-justify">
+            Técnico en Sistemas Microinformáticos y Redes con experiencia operativa en soporte a usuarios (Nivel 1 y 2), gestión de incidencias corporativas y administración básica de sistemas. Actualmente cursando el CFGS en Desarrollo de Aplicaciones Multiplataforma para complementar el perfil de infraestructura con competencias en ingeniería de software. Orientado a posiciones de Soporte IT y Desarrollo Junior, aportando una visión técnica integral desde el hardware hasta el código.
           </p>
         </section>
         
         <section>
-          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Habilidades Técnicas</h2>
-          <ul class="space-y-4 text-sm text-muted-foreground">
-            <li>
-              <strong class="text-foreground block mb-1">Frontend</strong>
-              React, Astro, Tailwind CSS, TypeScript, JavaScript, HTML5/CSS3
-            </li>
-            <li>
-              <strong class="text-foreground block mb-1">Backend & Datos</strong>
-              Java, Node.js, Spring Boot, MySQL, PostgreSQL, MongoDB
-            </li>
-            <li>
-              <strong class="text-foreground block mb-1">Herramientas & SO</strong>
-              Git, Docker, Linux, Windows Server, Postman
-            </li>
-          </ul>
+          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Stack Técnico</h2>
+          
+          <div class="mb-6">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Sistemas & Redes</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Windows 10/11</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Active Directory</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Redes Wi-Fi</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Windows Server</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Linux</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Linux Server</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Desarrollo</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">Java</span>
+              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">HTML & CSS</span>
+              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">JavaScript</span>
+              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">React</span>
+              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">MySQL</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Herramientas</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Jira</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Git & GitHub</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">BeyondTrust</span>
+              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">SSH</span>
+            </div>
+          </div>
         </section>
         
         <section>
-          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Idiomas</h2>
+          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Info Adicional</h2>
           <ul class="space-y-2 text-sm text-muted-foreground">
-            <li><strong class="text-foreground">Español:</strong> Nativo</li>
-            <li><strong class="text-foreground">Inglés:</strong> Técnico (Lectura)</li>
+            <li><strong class="text-foreground">Idiomas:</strong> Inglés técnico (lectura y doc).</li>
+            <li><strong class="text-foreground">Carnet de conducir:</strong> Clase B (En proceso).</li>
           </ul>
         </section>
         
@@ -72,18 +91,42 @@ import { Briefcase, GraduationCap, Download } from 'lucide-react';
         <section>
           <div class="flex items-center gap-3 mb-6 text-2xl font-bold">
             <Briefcase className="w-7 h-7 text-foreground" />
-            <h2>Experiencia</h2>
+            <h2>Experiencia Profesional</h2>
           </div>
           
           <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
+            
+            {/* BOYCOR */}
             <div class="relative">
               <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-foreground ring-4 ring-background"></div>
-              <h3 class="text-lg font-bold">Desarrollador de Software (Prácticas FCT)</h3>
-              <p class="text-foreground/80 font-mono text-sm mb-3">Empresa Local | Marzo 2024 - Junio 2024</p>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Desarrollo y mantenimiento de aplicaciones web internas. Colaboración activa en el diseño de bases de datos y creación de funcionalidades clave mediante APIs REST para la gestión y optimización de herramientas empresariales.
-              </p>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="text-lg font-bold">Técnico de Soporte Informático (Help Desk)</h3>
+                <span class="text-xs font-mono bg-foreground/10 text-foreground px-2 py-1 rounded hidden sm:block">1 mes</span>
+              </div>
+              <p class="text-foreground/80 font-mono text-sm mb-3">BOYCOR | Junio 2024 – Julio 2024</p>
+              <ul class="list-disc list-outside ml-4 text-muted-foreground text-sm space-y-2">
+                <li>Atención técnica de primer nivel para usuarios de la compañía, diagnosticando problemas en equipos informáticos y garantizando la continuidad operativa.</li>
+                <li>Despliegue y configuración de hardware y software en puestos de trabajo.</li>
+                <li>Escalado de incidencias complejas y aplicación de protocolos de seguridad y respaldo de información corporativa.</li>
+              </ul>
             </div>
+
+            {/* VALEO SE */}
+            <div class="relative">
+              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-border ring-4 ring-background"></div>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="text-lg font-bold">Técnico de Soporte Informático (Help Desk)</h3>
+                <span class="text-xs font-mono bg-muted text-muted-foreground px-2 py-1 rounded hidden sm:block">3 meses</span>
+              </div>
+              <p class="text-foreground/80 font-mono text-sm mb-3">Valeo SE | Marzo 2024 – Junio 2024</p>
+              <ul class="list-disc list-outside ml-4 text-muted-foreground text-sm space-y-2">
+                <li>Registro, seguimiento y resolución de incidencias técnicas de hardware y software mediante el sistema de ticketing <strong>Jira</strong>.</li>
+                <li>Soporte remoto a usuarios corporativos utilizando <strong>BeyondTrust</strong>, minimizando tiempos de inactividad de los equipos de trabajo.</li>
+                <li>Administración de usuarios en entornos <strong>Windows 10/11</strong> y gestión de accesos, credenciales y permisos mediante <strong>Active Directory</strong>.</li>
+                <li>Diagnóstico y resolución de incidencias de conectividad en red local, con especial foco en el mantenimiento y estabilidad de la infraestructura Wi-Fi.</li>
+              </ul>
+            </div>
+
           </div>
         </section>
 
@@ -91,27 +134,27 @@ import { Briefcase, GraduationCap, Download } from 'lucide-react';
         <section>
           <div class="flex items-center gap-3 mb-6 text-2xl font-bold">
             <GraduationCap className="w-7 h-7 text-foreground" />
-            <h2>Educación</h2>
+            <h2>Formación Académica</h2>
           </div>
           
           <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
             
             <div class="relative">
               <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-foreground ring-4 ring-background"></div>
-              <h3 class="text-lg font-bold">Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
-              <p class="text-foreground/80 font-mono text-sm mb-3">Instituto de Martos, Jaén | 2022 - 2024</p>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Especialización intensiva en desarrollo de interfaces, acceso a datos, programación multimedia, dispositivos móviles y sistemas de gestión empresarial.
-              </p>
+              <h3 class="text-lg font-bold">Desarrollo Front-end con React</h3>
+              <p class="text-foreground/80 font-mono text-sm">OpenWebinars | 2025</p>
             </div>
             
             <div class="relative">
               <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-border ring-4 ring-background"></div>
-              <h3 class="text-lg font-bold">Grado Medio en Sistemas Microinformáticos y Redes (SMR)</h3>
-              <p class="text-foreground/80 font-mono text-sm mb-3">Instituto de Martos, Jaén | 2020 - 2022</p>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Montaje y mantenimiento de equipos, instalación y configuración de sistemas operativos en red (Windows/Linux), servicios locales y seguridad informática.
-              </p>
+              <h3 class="text-lg font-bold">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+              <p class="text-foreground/80 font-mono text-sm mb-1">IES Fernando III | 2024 – En curso</p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-border ring-4 ring-background"></div>
+              <h3 class="text-lg font-bold">CFGM Sistemas Microinformáticos y Redes (SMR)</h3>
+              <p class="text-foreground/80 font-mono text-sm mb-1">IES Miguel Sánchez López | 2022 – 2024</p>
             </div>
 
           </div>
