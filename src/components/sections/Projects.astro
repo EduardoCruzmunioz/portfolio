@@ -75,6 +75,14 @@ const inactiveClasses = 'bg-transparent text-muted-foreground border-border hove
         </div>
       </article>
     ))}
+
+    {/* Mensaje de estado vacío (oculto por defecto) */}
+    <div id="empty-state" class="hidden col-span-1 md:col-span-2 py-20 flex-col items-center justify-center text-center border border-dashed border-border rounded-2xl bg-muted/10">
+      <p class="text-foreground font-mono text-lg mb-3">&lt;EmptyState /&gt;</p>
+      <p class="text-muted-foreground max-w-md mx-auto">
+        Todavía no he publicado proyectos en esta categoría, pero estoy trabajando en nuevas ideas y código. ¡Vuelve pronto!
+      </p>
+    </div>
   </div>
 </section>
 
@@ -82,6 +90,7 @@ const inactiveClasses = 'bg-transparent text-muted-foreground border-border hove
   // Lógica de filtrado en cliente
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
+  const emptyState = document.getElementById('empty-state');
 
   const baseClasses = 'filter-btn px-5 py-2.5 rounded-lg font-mono text-sm border transition-colors cursor-pointer';
   const activeClasses = 'bg-foreground text-background border-foreground';
@@ -99,14 +108,27 @@ const inactiveClasses = 'bg-transparent text-muted-foreground border-border hove
 
       // 3. Filtrar tarjetas
       const filter = btn.getAttribute('data-filter');
+      let visibleCount = 0;
 
       cards.forEach(card => {
         if (filter === 'all' || card.getAttribute('data-category') === filter) {
           card.style.display = 'flex'; // Las tarjetas usan flex-col
+          visibleCount++;
         } else {
           card.style.display = 'none';
         }
       });
+
+      // 4. Mostrar u ocultar estado vacío
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          emptyState.classList.add('flex');
+        } else {
+          emptyState.classList.add('hidden');
+          emptyState.classList.remove('flex');
+        }
+      }
     });
   });
 </script>
