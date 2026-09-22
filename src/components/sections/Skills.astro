@@ -1,19 +1,40 @@
 ---
-const technologies = [
-  { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
-  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
-  { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
-  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
-  { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
-  { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg' },
-  { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
-  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
-  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
-  { name: 'Windows', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg' },
+import { Layout, Server, Terminal } from 'lucide-react';
+
+const categories = [
+  {
+    title: "Frontend",
+    icon: Layout,
+    skills: [
+      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+      { name: 'Tailwind', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
+      { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
+    ]
+  },
+  {
+    title: "Backend",
+    icon: Server,
+    skills: [
+      { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+      { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg' },
+    ]
+  },
+  {
+    title: "Sistemas & Herramientas",
+    icon: Terminal,
+    skills: [
+      { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
+      { name: 'Windows', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg' },
+      { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+    ]
+  }
 ];
 ---
 
-<section id="skills" class="py-20 border-t border-border overflow-hidden relative">
+<section id="skills" class="py-20 border-t border-border">
   <div class="mb-12">
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Stack Tecnológico</h2>
     <p class="text-muted-foreground text-lg max-w-2xl">
@@ -21,52 +42,28 @@ const technologies = [
     </p>
   </div>
 
-  {/* Contenedor del Slider con efecto difuminado en los bordes */}
-  <div class="relative w-full border-y border-border bg-muted/10 py-10 flex overflow-hidden">
-    
-    {/* Sombras difuminadas a los lados para disimular la entrada y salida */}
-    <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-    <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
-    
-    {/* Pista animada (El doble de ancha para el loop infinito) */}
-    <div class="flex w-max animate-marquee hover:[animation-play-state:paused] transition-all">
-      
-      {/* Grupo 1 Original */}
-      <div class="flex shrink-0 items-center gap-12 sm:gap-20 px-6 sm:px-10">
-        {technologies.map(tech => (
-          <div class="flex flex-col items-center justify-center gap-3 opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-300 min-w-[80px]">
-            <img src={tech.icon} alt={`Logo de ${tech.name}`} class="w-14 h-14 object-contain filter drop-shadow-sm" />
-            <span class="font-mono text-xs text-muted-foreground font-semibold tracking-wide">{tech.name}</span>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    {categories.map(category => {
+      const Icon = category.icon;
+      return (
+        <div class="p-8 rounded-2xl border border-border bg-muted/20 hover:bg-muted/40 transition-colors">
+          <h3 class="text-xl font-bold mb-8 flex items-center gap-3 text-foreground">
+            <Icon className="w-6 h-6 text-muted-foreground" />
+            {category.title}
+          </h3>
+          
+          <div class="flex flex-wrap gap-6">
+            {category.skills.map(skill => (
+              <div class="flex flex-col items-center gap-2.5 group w-[72px]">
+                <div class="w-16 h-16 bg-background border border-border rounded-2xl flex items-center justify-center shadow-sm group-hover:-translate-y-1 group-hover:border-foreground/30 group-hover:shadow-md transition-all duration-300">
+                  <img src={skill.icon} alt={skill.name} class="w-9 h-9 object-contain filter drop-shadow-sm opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span class="font-mono text-[11px] text-muted-foreground text-center font-medium leading-tight group-hover:text-foreground transition-colors">{skill.name}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      {/* Grupo 2 Duplicado para crear el Loop Continuo */}
-      <div class="flex shrink-0 items-center gap-12 sm:gap-20 px-6 sm:px-10" aria-hidden="true">
-        {technologies.map(tech => (
-          <div class="flex flex-col items-center justify-center gap-3 opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-300 min-w-[80px]">
-            <img src={tech.icon} alt={`Logo de ${tech.name}`} class="w-14 h-14 object-contain filter drop-shadow-sm" />
-            <span class="font-mono text-xs text-muted-foreground font-semibold tracking-wide">{tech.name}</span>
-          </div>
-        ))}
-      </div>
-      
-    </div>
+        </div>
+      );
+    })}
   </div>
 </section>
-
-<style>
-  .animate-marquee {
-    animation: marquee 35s linear infinite;
-  }
-  
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      /* Se desplaza exactamente el 50% de su ancho total (un grupo entero) para hacer el loop perfecto */
-      transform: translateX(-50%);
-    }
-  }
-</style>
