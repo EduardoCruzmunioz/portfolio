@@ -1,166 +1,210 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/ui/Header';
-import { Briefcase, GraduationCap, Download } from 'lucide-react';
 ---
 
 <Layout 
   title="CV - Eduardo Cruz | Desarrollador FullStack" 
-  description="Currículum Vitae de Eduardo Cruz. Trayectoria académica y profesional como Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) y Sistemas (SMR)."
+  description="Currículum Vitae de Eduardo Cruz. Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) y Sistemas (SMR)."
 >
   <Header client:load />
   
-  <main class="max-w-4xl mx-auto px-4 md:px-6 py-24 md:py-32">
+  <div class="w-full bg-[#f3f4f6] min-h-[calc(100vh-5rem)] py-10 md:py-16 print:bg-white print:py-0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      
+      .cv-container {
+          font-family: 'Inter', sans-serif;
+      }
+      
+      @media print {
+          body, .cv-wrapper {
+              background-color: white !important;
+          }
+          .cv-container {
+              box-shadow: none !important;
+              margin: 0 !important;
+              padding: 0 !important;
+              max-width: 100% !important;
+          }
+          /* Ocultar elementos de navegación web al imprimir */
+          header, nav, .hide-on-print {
+              display: none !important;
+          }
+      }
+    </style>
+
+    <!-- Contenedor principal A4 -->
+    <div class="cv-container max-w-4xl mx-auto bg-white shadow-2xl p-10 sm:p-14 text-gray-800">
+
+        <!-- Cabecera con Foto y Enlaces -->
+        <header class="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b-2 border-gray-200 pb-6 mb-8 hide-on-print-border">
+            
+            <!-- Foto de perfil -->
+            <div class="flex-shrink-0">
+                <img src="/foto-eduardo.jpg" alt="Foto de perfil" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover border-4 border-gray-50 shadow-md" onerror="this.src='https://ui-avatars.com/api/?name=Eduardo+Cruz&size=512&background=0D0D0D&color=fff'">
+            </div>
+            
+            <!-- Info y Contacto -->
+            <div class="flex-grow text-center sm:text-left w-full">
+                <h1 class="text-4xl font-bold text-gray-900 uppercase tracking-tight">Eduardo Cruz Muñoz</h1>
+                <h2 class="text-xl text-blue-600 font-semibold mt-1">Técnico de Soporte IT | Desarrollador Junior</h2>
+                
+                <!-- Cuadrícula de Datos de contacto y Enlaces -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 mt-5 text-sm text-gray-600">
+                    <span class="flex items-center justify-center sm:justify-start gap-2">
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        educruzm2004@gmail.com
+                    </span>
+                    <span class="flex items-center justify-center sm:justify-start gap-2">
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        662046087
+                    </span>
+                    <span class="flex items-center justify-center sm:justify-start gap-2">
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Martos, Jaén
+                    </span>
+                    
+                    <a href="https://www.linkedin.com/in/eduardo-cruz-muñoz2202" target="_blank" class="flex items-center justify-center sm:justify-start gap-2 hover:text-blue-600 transition-colors font-medium">
+                        <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        linkedin.com/in/eduardo-cruz-muñoz
+                    </a>
+                    <a href="https://github.com/EduardoCruzmunioz" target="_blank" class="flex items-center justify-center sm:justify-start gap-2 hover:text-gray-900 transition-colors font-medium">
+                        <svg class="w-4 h-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        github.com/EduardoCruzmunioz
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Perfil Profesional -->
+        <section class="mb-8">
+            <h3 class="text-lg font-bold text-gray-900 border-b border-gray-200 pb-1 mb-3">PERFIL PROFESIONAL</h3>
+            <p class="text-gray-700 leading-relaxed text-sm text-justify">
+                Técnico en Sistemas Microinformáticos y Redes con experiencia operativa en soporte a usuarios (Nivel 1 y 2), gestión de incidencias corporativas y administración básica de sistemas. Actualmente cursando el CFGS en Desarrollo de Aplicaciones Multiplataforma para complementar el perfil de infraestructura con competencias en ingeniería de software. Orientado a posiciones de Soporte IT y Desarrollo Junior, aportando una visión técnica integral desde el hardware hasta el código.
+            </p>
+        </section>
+
+        <!-- Grid de dos columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Columna Izquierda: Skills, Formación -->
+            <div class="md:col-span-1 space-y-8">
+                
+                <!-- Competencias Técnicas -->
+                <section>
+                    <h3 class="text-lg font-bold text-gray-900 border-b border-gray-200 pb-1 mb-3">STACK TÉCNICO</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Sistemas & Redes</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Windows 10/11</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Active Directory</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Redes Wi-Fi</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Windows Server</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Linux</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Linux Server</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Desarrollo</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded">Java</span>
+                            <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded">HTML & CSS</span>
+                            <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded">JavaScript</span>
+                            <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded">React</span>
+                            <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded">MySQL</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Herramientas</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Jira (Ticketing)</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">Git & GitHub</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">BeyondTrust</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">SSH</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formación Académica -->
+                <section>
+                    <h3 class="text-lg font-bold text-gray-900 border-b border-gray-200 pb-1 mb-3">FORMACIÓN</h3>
+                    <div class="mb-4">
+                        <h4 class="text-sm font-bold text-gray-800">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h4>
+                        <p class="text-xs text-gray-500 mb-1">IES Fernando III</p>
+                        <p class="text-xs text-blue-600 font-semibold">2024 – En curso</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="text-sm font-bold text-gray-800">CFGM Sistemas Microinformáticos y Redes (SMR)</h4>
+                        <p class="text-xs text-gray-500 mb-1">IES Miguel Sánchez López</p>
+                        <p class="text-xs text-gray-500">2022 – 2024</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-800">Desarrollo Front-end con React</h4>
+                        <p class="text-xs text-gray-500 mb-1">OpenWebinars (2025)</p>
+                    </div>
+                </section>
+
+                <!-- Info Adicional -->
+                <section>
+                    <h3 class="text-lg font-bold text-gray-900 border-b border-gray-200 pb-1 mb-3">INFO ADICIONAL</h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li><strong>Idiomas:</strong> Inglés técnico (lectura y documentación).</li>
+                        <li><strong>Carnet de conducir:</strong> Clase B (En proceso).</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Columna Derecha: Experiencia -->
+            <div class="md:col-span-2">
+                <h3 class="text-lg font-bold text-gray-900 border-b border-gray-200 pb-1 mb-4">EXPERIENCIA PROFESIONAL</h3>
+                
+                <!-- Experiencia 1 -->
+                <div class="mb-8 relative pl-4 border-l-2 border-blue-200">
+                    <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1"></div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="text-md font-bold text-gray-800">Técnico de Soporte Informático (Help Desk)</h4>
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">3 meses</span>
+                    </div>
+                    <p class="text-sm text-gray-500 font-medium mb-3">Valeo SE | Marzo 2024 – Junio 2024</p>
+                    <ul class="list-disc list-outside ml-4 text-sm text-gray-700 space-y-2">
+                        <li>Registro, seguimiento y resolución de incidencias técnicas de hardware y software mediante el sistema de ticketing <strong>Jira</strong>.</li>
+                        <li>Soporte remoto a usuarios corporativos utilizando <strong>BeyondTrust</strong>, minimizando tiempos de inactividad de los equipos de trabajo.</li>
+                        <li>Administración de usuarios en entornos <strong>Windows 10/11</strong> y gestión de accesos, credenciales y permisos mediante <strong>Active Directory</strong>.</li>
+                        <li>Diagnóstico y resolución de incidencias de conectividad en red local, con especial foco en el mantenimiento y estabilidad de la infraestructura Wi-Fi.</li>
+                    </ul>
+                </div>
+
+                <!-- Experiencia 2 -->
+                <div class="relative pl-4 border-l-2 border-blue-200">
+                    <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1"></div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="text-md font-bold text-gray-800">Técnico de Soporte Informático (Help Desk)</h4>
+                        <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded">1 mes</span>
+                    </div>
+                    <p class="text-sm text-gray-500 font-medium mb-3">BOYCOR | Junio 2024 – Julio 2024</p>
+                    <ul class="list-disc list-outside ml-4 text-sm text-gray-700 space-y-2">
+                        <li>Atención técnica de primer nivel para usuarios de la compañía, diagnosticando problemas en equipos informáticos y garantizando la continuidad operativa.</li>
+                        <li>Despliegue y configuración de hardware y software en puestos de trabajo.</li>
+                        <li>Escalado de incidencias complejas y aplicación de protocolos de seguridad y respaldo de información corporativa.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
     
-    {/* Encabezado del CV */}
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-      <div>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Currículum Vitae</h1>
-        <p class="text-xl text-muted-foreground">Técnico de Soporte IT | Desarrollador Junior</p>
-      </div>
-      <a href="/cv-eduardo-cruz.pdf" download class="inline-flex items-center justify-center gap-2 bg-foreground text-background px-6 py-3 rounded-lg font-mono text-sm hover:opacity-90 transition-opacity">
-        <Download className="w-4 h-4" />
+    <!-- Botón de descarga al final de la página (no se imprime) -->
+    <div class="max-w-4xl mx-auto mt-8 flex justify-end px-4 md:px-0 hide-on-print pb-8">
+      <a href="/cv-eduardo-cruz.pdf" download class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors shadow-lg">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
         Descargar PDF
       </a>
     </div>
 
-    {/* Contenido a dos columnas */}
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      
-      {/* Columna Izquierda (Perfil y Skills) */}
-      <div class="md:col-span-1 space-y-10">
-        
-        <section>
-          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Perfil Profesional</h2>
-          <p class="text-muted-foreground leading-relaxed text-sm text-justify">
-            Técnico en Sistemas Microinformáticos y Redes con experiencia operativa en soporte a usuarios (Nivel 1 y 2), gestión de incidencias corporativas y administración básica de sistemas. Actualmente cursando el CFGS en Desarrollo de Aplicaciones Multiplataforma para complementar el perfil de infraestructura con competencias en ingeniería de software. Orientado a posiciones de Soporte IT y Desarrollo Junior, aportando una visión técnica integral desde el hardware hasta el código.
-          </p>
-        </section>
-        
-        <section>
-          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Stack Técnico</h2>
-          
-          <div class="mb-6">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Sistemas & Redes</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Windows 10/11</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Active Directory</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Redes Wi-Fi</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Windows Server</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Linux</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Linux Server</span>
-            </div>
-          </div>
-
-          <div class="mb-6">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Desarrollo</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">Java</span>
-              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">HTML & CSS</span>
-              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">JavaScript</span>
-              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">React</span>
-              <span class="bg-foreground/10 text-foreground text-xs font-mono px-2 py-1 rounded">MySQL</span>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Herramientas</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Jira</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">Git & GitHub</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">BeyondTrust</span>
-              <span class="bg-muted text-muted-foreground text-xs font-mono px-2 py-1 rounded">SSH</span>
-            </div>
-          </div>
-        </section>
-        
-        <section>
-          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Info Adicional</h2>
-          <ul class="space-y-2 text-sm text-muted-foreground">
-            <li><strong class="text-foreground">Idiomas:</strong> Inglés técnico (lectura y doc).</li>
-            <li><strong class="text-foreground">Carnet de conducir:</strong> Clase B (En proceso).</li>
-          </ul>
-        </section>
-        
-      </div>
-
-      {/* Columna Derecha (Línea del tiempo) */}
-      <div class="md:col-span-2 space-y-12">
-        
-        {/* Experiencia */}
-        <section>
-          <div class="flex items-center gap-3 mb-6 text-2xl font-bold">
-            <Briefcase className="w-7 h-7 text-foreground" />
-            <h2>Experiencia Profesional</h2>
-          </div>
-          
-          <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
-            
-            {/* BOYCOR */}
-            <div class="relative">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-foreground ring-4 ring-background"></div>
-              <div class="flex justify-between items-start mb-1">
-                <h3 class="text-lg font-bold">Técnico de Soporte Informático (Help Desk)</h3>
-                <span class="text-xs font-mono bg-foreground/10 text-foreground px-2 py-1 rounded hidden sm:block">1 mes</span>
-              </div>
-              <p class="text-foreground/80 font-mono text-sm mb-3">BOYCOR | Junio 2024 – Julio 2024</p>
-              <ul class="list-disc list-outside ml-4 text-muted-foreground text-sm space-y-2">
-                <li>Atención técnica de primer nivel para usuarios de la compañía, diagnosticando problemas en equipos informáticos y garantizando la continuidad operativa.</li>
-                <li>Despliegue y configuración de hardware y software en puestos de trabajo.</li>
-                <li>Escalado de incidencias complejas y aplicación de protocolos de seguridad y respaldo de información corporativa.</li>
-              </ul>
-            </div>
-
-            {/* VALEO SE */}
-            <div class="relative">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-border ring-4 ring-background"></div>
-              <div class="flex justify-between items-start mb-1">
-                <h3 class="text-lg font-bold">Técnico de Soporte Informático (Help Desk)</h3>
-                <span class="text-xs font-mono bg-muted text-muted-foreground px-2 py-1 rounded hidden sm:block">3 meses</span>
-              </div>
-              <p class="text-foreground/80 font-mono text-sm mb-3">Valeo SE | Marzo 2024 – Junio 2024</p>
-              <ul class="list-disc list-outside ml-4 text-muted-foreground text-sm space-y-2">
-                <li>Registro, seguimiento y resolución de incidencias técnicas de hardware y software mediante el sistema de ticketing <strong>Jira</strong>.</li>
-                <li>Soporte remoto a usuarios corporativos utilizando <strong>BeyondTrust</strong>, minimizando tiempos de inactividad de los equipos de trabajo.</li>
-                <li>Administración de usuarios en entornos <strong>Windows 10/11</strong> y gestión de accesos, credenciales y permisos mediante <strong>Active Directory</strong>.</li>
-                <li>Diagnóstico y resolución de incidencias de conectividad en red local, con especial foco en el mantenimiento y estabilidad de la infraestructura Wi-Fi.</li>
-              </ul>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Educación */}
-        <section>
-          <div class="flex items-center gap-3 mb-6 text-2xl font-bold">
-            <GraduationCap className="w-7 h-7 text-foreground" />
-            <h2>Formación Académica</h2>
-          </div>
-          
-          <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
-            
-            <div class="relative">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-foreground ring-4 ring-background"></div>
-              <h3 class="text-lg font-bold">Desarrollo Front-end con React</h3>
-              <p class="text-foreground/80 font-mono text-sm">OpenWebinars | 2025</p>
-            </div>
-            
-            <div class="relative">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-border ring-4 ring-background"></div>
-              <h3 class="text-lg font-bold">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
-              <p class="text-foreground/80 font-mono text-sm mb-1">IES Fernando III | 2024 – En curso</p>
-            </div>
-
-            <div class="relative">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-border ring-4 ring-background"></div>
-              <h3 class="text-lg font-bold">CFGM Sistemas Microinformáticos y Redes (SMR)</h3>
-              <p class="text-foreground/80 font-mono text-sm mb-1">IES Miguel Sánchez López | 2022 – 2024</p>
-            </div>
-
-          </div>
-        </section>
-
-      </div>
-    </div>
-  </main>
+  </div>
 </Layout>
