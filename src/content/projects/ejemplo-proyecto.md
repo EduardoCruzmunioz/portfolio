@@ -2,6 +2,7 @@
 title: "E-Commerce de Alto Rendimiento"
 description: "Plataforma de ventas online optimizada para SEO y tiempos de carga inferiores a 1 segundo."
 technologies: ["React", "Node.js", "PostgreSQL", "Tailwind"]
+category: "web"
 githubUrl: "https://github.com/EduardoCruzmunioz"
 liveUrl: "https://example.com"
 featured: true

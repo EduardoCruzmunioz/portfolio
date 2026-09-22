@@ -2,28 +2,52 @@
 import { getCollection } from 'astro:content';
 import { Github, ExternalLink } from 'lucide-react';
 
-// Obtenemos los proyectos automáticamente de la carpeta src/content/projects/
-const allProjects = await getCollection('projects');
-const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
+const projects = await getCollection('projects');
+const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
+
+const categories = [
+  { id: 'all', label: 'Todos' },
+  { id: 'web', label: 'Web' },
+  { id: 'mobile', label: 'Móvil' },
+  { id: 'console', label: 'Consola' },
+  { id: 'desktop', label: 'Escritorio' },
+];
 ---
-<section id="projects" class="py-20 border-t border-border">
-  <div class="mb-12">
-    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Proyectos Destacados</h2>
-    <p class="text-muted-foreground text-lg max-w-2xl">
-      Casos prácticos donde he resuelto problemas técnicos reales.
-    </p>
+
+<section id="projects" class="py-24">
+  <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Proyectos Destacados</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl">
+        Una selección de mis mejores trabajos, abarcando diferentes plataformas y tecnologías.
+      </p>
+    </div>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+  {/* Pestañas de filtrado */}
+  <div class="flex flex-wrap items-center gap-3 mb-10">
+    {categories.map(cat => (
+      <button
+        class={`filter-btn px-5 py-2.5 rounded-lg font-mono text-sm border transition-colors ${cat.id === 'all' ? 'bg-foreground text-background border-foreground' : 'bg-transparent text-muted-foreground border-border hover:border-foreground/50 hover:text-foreground'}`}
+        data-filter={cat.id}
+      >
+        {cat.label}
+      </button>
+    ))}
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
     {sortedProjects.map(project => (
-      <article class="flex flex-col border border-border rounded-2xl bg-background overflow-hidden hover:border-foreground/30 transition-colors group">
-        <div class="p-8 flex-1 flex flex-col">
-          <h3 class="text-2xl font-bold mb-4 group-hover:text-muted-foreground transition-colors">{project.data.title}</h3>
-          <p class="text-muted-foreground mb-8 flex-1 text-lg">{project.data.description}</p>
+      <article class="project-card flex flex-col h-full bg-card rounded-2xl border border-border overflow-hidden hover:border-foreground/50 transition-colors" data-category={project.data.category}>
+        <div class="p-6 md:p-8 flex flex-col h-full">
+          <h3 class="text-2xl font-bold mb-3">{project.data.title}</h3>
+          <p class="text-muted-foreground mb-6 line-clamp-3">
+            {project.data.description}
+          </p>
           
-          <div class="flex flex-wrap gap-2 mb-10">
+          <div class="flex flex-wrap gap-2 mb-8">
             {project.data.technologies.map(tech => (
-              <span class="px-2.5 py-1 rounded-md border border-border bg-muted/30 text-xs font-mono text-foreground">
+              <span class="px-3 py-1 rounded-full bg-muted/50 text-sm font-medium text-muted-foreground">
                 {tech}
               </span>
             ))}
@@ -49,3 +73,34 @@ const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
     ))}
   </div>
 </section>
+
+<script>
+  // Lógica de filtrado en cliente
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. Quitar estado activo de todos los botones
+      buttons.forEach(b => {
+        b.classList.remove('bg-foreground', 'text-background', 'border-foreground');
+        b.classList.add('bg-transparent', 'text-muted-foreground', 'border-border');
+      });
+
+      // 2. Poner estado activo al botón clickeado
+      btn.classList.remove('bg-transparent', 'text-muted-foreground', 'border-border');
+      btn.classList.add('bg-foreground', 'text-background', 'border-foreground');
+
+      // 3. Filtrar tarjetas
+      const filter = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'flex'; // Las tarjetas usan flex-col
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
