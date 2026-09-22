@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/ui/Header';
+import { Briefcase, GraduationCap, Download } from 'lucide-react';
+---
+
+<Layout title="CV - Eduardo Cruz | Desarrollador FullStack">
+  <Header client:load />
+  
+  <main class="max-w-4xl mx-auto px-4 md:px-6 py-24 md:py-32">
+    
+    {/* Encabezado del CV */}
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Currículum Vitae</h1>
+        <p class="text-xl text-muted-foreground">Mi trayectoria académica y profesional al detalle.</p>
+      </div>
+      <a href="/cv-eduardo-cruz.pdf" download class="inline-flex items-center justify-center gap-2 bg-foreground text-background px-6 py-3 rounded-lg font-mono text-sm hover:opacity-90 transition-opacity">
+        <Download className="w-4 h-4" />
+        Descargar PDF
+      </a>
+    </div>
+
+    {/* Contenido a dos columnas */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      
+      {/* Columna Izquierda (Perfil y Skills) */}
+      <div class="md:col-span-1 space-y-10">
+        
+        <section>
+          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Perfil</h2>
+          <p class="text-muted-foreground leading-relaxed text-sm">
+            Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) y Sistemas Microinformáticos y Redes (SMR). Apasionado por la creación de arquitecturas sólidas y el desarrollo de soluciones de software eficientes que resuelvan problemas reales.
+          </p>
+        </section>
+        
+        <section>
+          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Habilidades Técnicas</h2>
+          <ul class="space-y-4 text-sm text-muted-foreground">
+            <li>
+              <strong class="text-foreground block mb-1">Frontend</strong>
+              React, Astro, Tailwind CSS, TypeScript, JavaScript, HTML5/CSS3
+            </li>
+            <li>
+              <strong class="text-foreground block mb-1">Backend & Datos</strong>
+              Java, Node.js, Spring Boot, MySQL, PostgreSQL, MongoDB
+            </li>
+            <li>
+              <strong class="text-foreground block mb-1">Herramientas & SO</strong>
+              Git, Docker, Linux, Windows Server, Postman
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2 class="text-xl font-bold mb-4 border-b border-border pb-2">Idiomas</h2>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><strong class="text-foreground">Español:</strong> Nativo</li>
+            <li><strong class="text-foreground">Inglés:</strong> Técnico (Lectura)</li>
+          </ul>
+        </section>
+        
+      </div>
+
+      {/* Columna Derecha (Línea del tiempo) */}
+      <div class="md:col-span-2 space-y-12">
+        
+        {/* Experiencia */}
+        <section>
+          <div class="flex items-center gap-3 mb-6 text-2xl font-bold">
+            <Briefcase className="w-7 h-7 text-foreground" />
+            <h2>Experiencia</h2>
+          </div>
+          
+          <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
+            <div class="relative">
+              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-foreground ring-4 ring-background"></div>
+              <h3 class="text-lg font-bold">Desarrollador de Software (Prácticas FCT)</h3>
+              <p class="text-foreground/80 font-mono text-sm mb-3">Empresa Local | Marzo 2024 - Junio 2024</p>
+              <p class="text-muted-foreground text-sm leading-relaxed">
+                Desarrollo y mantenimiento de aplicaciones web internas. Colaboración activa en el diseño de bases de datos y creación de funcionalidades clave mediante APIs REST para la gestión y optimización de herramientas empresariales.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Educación */}
+        <section>
+          <div class="flex items-center gap-3 mb-6 text-2xl font-bold">
+            <GraduationCap className="w-7 h-7 text-foreground" />
+            <h2>Educación</h2>
+          </div>
+          
+          <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
+            
+            <div class="relative">
+              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-foreground ring-4 ring-background"></div>
+              <h3 class="text-lg font-bold">Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+              <p class="text-foreground/80 font-mono text-sm mb-3">Instituto de Martos, Jaén | 2022 - 2024</p>
+              <p class="text-muted-foreground text-sm leading-relaxed">
+                Especialización intensiva en desarrollo de interfaces, acceso a datos, programación multimedia, dispositivos móviles y sistemas de gestión empresarial.
+              </p>
+            </div>
+            
+            <div class="relative">
+              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-border ring-4 ring-background"></div>
+              <h3 class="text-lg font-bold">Grado Medio en Sistemas Microinformáticos y Redes (SMR)</h3>
+              <p class="text-foreground/80 font-mono text-sm mb-3">Instituto de Martos, Jaén | 2020 - 2022</p>
+              <p class="text-muted-foreground text-sm leading-relaxed">
+                Montaje y mantenimiento de equipos, instalación y configuración de sistemas operativos en red (Windows/Linux), servicios locales y seguridad informática.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</Layout>

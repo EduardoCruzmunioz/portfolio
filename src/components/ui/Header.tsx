@@ -14,9 +14,10 @@ export default function Header() {
   };
 
   const navLinks = [
-    { name: 'Sobre Mí', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Proyectos', href: '#projects' },
+    { name: 'Sobre Mí', href: '/#about' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Proyectos', href: '/#projects' },
+    { name: 'Currículum', href: '/cv' },
   ];
 
   return (
