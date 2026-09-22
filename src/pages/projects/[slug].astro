@@ -74,3 +74,71 @@ const { Content } = await entry.render();
     <p>&copy; {new Date().getFullYear()} Eduardo Cruz.</p>
   </footer>
 </Layout>
+
+<style is:global>
+  /* Estilos estilo "Dev" / GitHub Markdown para los proyectos */
+  .prose-custom {
+    @apply text-muted-foreground text-base md:text-lg leading-relaxed;
+  }
+  
+  .prose-custom h2 {
+    /* Tipografía dev (Mono) y subrayado */
+    @apply font-mono text-xl md:text-2xl font-bold text-foreground mt-12 mb-4 tracking-tighter border-b border-border pb-2;
+  }
+  
+  /* Formato automático <Titulo/> para todos los H2 */
+  .prose-custom h2::before {
+    content: "<";
+    @apply text-muted-foreground mr-1 font-normal;
+  }
+  
+  .prose-custom h2::after {
+    content: "/>";
+    @apply text-muted-foreground ml-1 font-normal;
+  }
+  
+  .prose-custom h3 {
+    @apply font-mono text-lg font-bold text-foreground mt-8 mb-4 tracking-tight;
+  }
+  
+  .prose-custom p {
+    @apply mb-6;
+  }
+  
+  .prose-custom strong {
+    @apply text-foreground font-semibold;
+  }
+  
+  .prose-custom ul {
+    @apply list-none pl-0 space-y-2 mb-8;
+  }
+  
+  .prose-custom ul li {
+    @apply relative pl-6;
+  }
+  
+  .prose-custom ul li::before {
+    /* Estilo de guion puro de Markdown */
+    content: "-";
+    @apply absolute left-0 text-muted-foreground font-mono font-bold;
+  }
+
+  .prose-custom code {
+    /* Etiquetas de código inline tipo IDE */
+    @apply bg-muted text-foreground px-1.5 py-0.5 rounded font-mono text-sm border border-border;
+  }
+  
+  .prose-custom a {
+    @apply text-foreground underline decoration-muted-foreground underline-offset-4 hover:decoration-foreground transition-colors font-medium;
+  }
+  
+  .prose-custom hr {
+    /* Separadores con líneas discontinuas tipo terminal */
+    @apply border-border my-10 border-dashed;
+  }
+
+  .prose-custom img {
+    /* Efecto de panel de editor de código para imágenes */
+    @apply rounded-lg border border-border my-8 w-full object-cover bg-muted p-1;
+  }
+</style>
