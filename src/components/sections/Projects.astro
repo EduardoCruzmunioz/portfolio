@@ -12,6 +12,10 @@ const categories = [
   { id: 'console', label: 'Consola' },
   { id: 'desktop', label: 'Escritorio' },
 ];
+
+const baseClasses = 'filter-btn px-5 py-2.5 rounded-lg font-mono text-sm border transition-colors cursor-pointer';
+const activeClasses = 'bg-foreground text-background border-foreground';
+const inactiveClasses = 'bg-transparent text-muted-foreground border-border hover:border-foreground/50 hover:text-foreground';
 ---
 
 <section id="projects" class="py-24">
@@ -28,7 +32,7 @@ const categories = [
   <div class="flex flex-wrap items-center gap-3 mb-10">
     {categories.map(cat => (
       <button
-        class={`filter-btn px-5 py-2.5 rounded-lg font-mono text-sm border transition-colors ${cat.id === 'all' ? 'bg-foreground text-background border-foreground' : 'bg-transparent text-muted-foreground border-border hover:border-foreground/50 hover:text-foreground'}`}
+        class={`${baseClasses} ${cat.id === 'all' ? activeClasses : inactiveClasses}`}
         data-filter={cat.id}
       >
         {cat.label}
@@ -79,17 +83,19 @@ const categories = [
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
 
+  const baseClasses = 'filter-btn px-5 py-2.5 rounded-lg font-mono text-sm border transition-colors cursor-pointer';
+  const activeClasses = 'bg-foreground text-background border-foreground';
+  const inactiveClasses = 'bg-transparent text-muted-foreground border-border hover:border-foreground/50 hover:text-foreground';
+
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // 1. Quitar estado activo de todos los botones
+      // 1. Resetear todos los botones a inactivo
       buttons.forEach(b => {
-        b.classList.remove('bg-foreground', 'text-background', 'border-foreground');
-        b.classList.add('bg-transparent', 'text-muted-foreground', 'border-border');
+        b.className = `${baseClasses} ${inactiveClasses}`;
       });
 
-      // 2. Poner estado activo al botón clickeado
-      btn.classList.remove('bg-transparent', 'text-muted-foreground', 'border-border');
-      btn.classList.add('bg-foreground', 'text-background', 'border-foreground');
+      // 2. Poner el botón actual en activo
+      btn.className = `${baseClasses} ${activeClasses}`;
 
       // 3. Filtrar tarjetas
       const filter = btn.getAttribute('data-filter');
