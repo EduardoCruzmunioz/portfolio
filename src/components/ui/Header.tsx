@@ -41,10 +41,10 @@ export default function Header() {
 
         {/* Acciones Desktop */}
         <div className="hidden md:flex items-center gap-5">
-          <a href="https://github.com/EduardoCruzmunioz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+          <a href="https://github.com/EduardoCruzmunioz" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
             <Github className="w-5 h-5" />
           </a>
-          <a href="https://www.linkedin.com/in/eduardo-cruz-muñoz2202" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/eduardo-cruz-muñoz2202" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
             <Linkedin className="w-5 h-5" />
           </a>
           <button
@@ -79,10 +79,10 @@ export default function Header() {
           
           <div className="flex flex-col gap-4 pt-6 border-t border-border">
             <div className="flex gap-6 justify-center">
-                <a href="https://github.com/EduardoCruzmunioz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="https://github.com/EduardoCruzmunioz" className="text-muted-foreground hover:text-foreground transition-colors">
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="https://www.linkedin.com/in/eduardo-cruz-muñoz2202" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="https://www.linkedin.com/in/eduardo-cruz-muñoz2202" className="text-muted-foreground hover:text-foreground transition-colors">
                   <Linkedin className="w-6 h-6" />
                 </a>
             </div>

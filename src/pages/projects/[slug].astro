@@ -49,13 +49,13 @@ const { Content } = await entry.render();
 
       <div class="flex flex-wrap items-center gap-4 pt-8 border-t border-border">
         {entry.data.githubUrl && (
-          <a href={entry.data.githubUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 border border-border bg-transparent text-foreground rounded-lg font-mono text-sm hover:bg-muted transition-colors">
+          <a href={entry.data.githubUrl} class="flex items-center gap-2 px-5 py-2.5 border border-border bg-transparent text-foreground rounded-lg font-mono text-sm hover:bg-muted transition-colors">
             <Github className="w-4 h-4" />
             Ver Código
           </a>
         )}
         {entry.data.liveUrl && (
-          <a href={entry.data.liveUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-lg font-mono text-sm hover:opacity-90 transition-opacity">
+          <a href={entry.data.liveUrl} class="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-lg font-mono text-sm hover:opacity-90 transition-opacity">
             <ExternalLink className="w-4 h-4" />
             Visitar Demo
           </a>
