@@ -2,7 +2,7 @@
 title: "Tienda FernanShop"
 description: "Plataforma de comercio electrónico (B2C) desarrollada en Java para la gestión de catálogo y venta de productos."
 technologies: ["Java", "POO", "Manejo de Ficheros"]
-category: "desktop"
+category: "console"
 githubUrl: "https://github.com/EduardoCruzmunioz/Tienda-FernanShop"
 featured: true
 order: 4
@@ -10,7 +10,7 @@ order: 4
 
 ## Sobre el Proyecto
 
-**FernanShop** es un sistema integral de comercio electrónico inspirado en grandes plataformas como Amazon o PcComponentes. Desarrollado íntegramente en **Java**, este proyecto modela un flujo completo de venta online dirigido al consumidor final.
+**FernanShop** es un sistema integral de comercio electrónico inspirado en grandes plataformas como Amazon o PcComponentes. Desarrollado íntegramente en **Java**, este proyecto modela un flujo completo de venta online dirigido al consumidor final mediante una aplicación de consola.
 
 ---
 
@@ -22,4 +22,4 @@ order: 4
 
 ## Lo que demuestra
 
-Este desarrollo evidencia la capacidad para construir soluciones de software completas aplicando principios avanzados de **Programación Orientada a Objetos**. Refleja habilidad para modelar procesos de negocio reales (como el ciclo completo de una tienda online) asegurando la correcta separación entre la interfaz de usuario y la lógica de lectura/escritura en el sistema de ficheros.
+Este desarrollo evidencia la capacidad para construir soluciones de software completas aplicando principios avanzados de **Programación Orientada a Objetos**. Refleja habilidad para modelar procesos de negocio reales (como el ciclo completo de una tienda online) asegurando la correcta separación entre la interfaz de línea de comandos (CLI) y la lógica de lectura/escritura en el sistema de ficheros.
