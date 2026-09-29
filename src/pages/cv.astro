@@ -2,13 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/ui/Header';
 import { 
-  Download, Briefcase, GraduationCap, Wrench, 
-  Server, Code, Terminal, Mail, MapPin, User
+  Download, Mail, MapPin, FileText
 } from 'lucide-react';
 ---
 
 <Layout 
-  title="CV - Eduardo Cruz | Desarrollador FullStack" 
+  title="CV - Eduardo Cruz | Soporte IT & Dev Junior" 
   description="Currículum Vitae de Eduardo Cruz. Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) y Sistemas (SMR)."
 >
   <Header client:load />
@@ -16,7 +15,7 @@ import {
   <main class="max-w-5xl mx-auto px-4 md:px-8 py-24 md:py-32">
     
     {/* Cabecera / Hero del CV */}
-    <div class="flex flex-col md:flex-row gap-8 items-start justify-between mb-16 border-b border-border pb-12">
+    <div class="flex flex-col md:flex-row gap-8 items-start justify-between mb-12 border-b border-border pb-12">
       <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
         <img 
           src="/foto-eduardo.jpg" 
@@ -39,187 +38,36 @@ import {
       </a>
     </div>
 
-    {/* Layout principal a dos columnas */}
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-      
-      {/* Columna Izquierda (Principal: Experiencia y Educación) */}
-      <div class="lg:col-span-2 space-y-16">
-        
-        {/* Perfil */}
-        <section>
-          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-foreground">
-            <User className="w-6 h-6 text-muted-foreground" /> Perfil Profesional
-          </h3>
-          <div class="bg-muted/30 p-6 rounded-2xl border border-border relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-foreground/20"></div>
-            <p class="text-muted-foreground leading-relaxed text-sm md:text-base text-justify">
-              Técnico en Sistemas Microinformáticos y Redes con experiencia operativa en soporte a usuarios (Nivel 1 y 2), gestión de incidencias corporativas y administración básica de sistemas. Actualmente cursando el CFGS en Desarrollo de Aplicaciones Multiplataforma para complementar el perfil de infraestructura con competencias en ingeniería de software. Orientado a posiciones de Soporte IT y Desarrollo Junior, aportando una visión técnica integral desde el hardware hasta el código.
-            </p>
-          </div>
-        </section>
-
-        {/* Experiencia */}
-        <section>
-          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-foreground">
-            <Briefcase className="w-6 h-6 text-muted-foreground" /> Experiencia Profesional
-          </h3>
-          <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
-            
-            {/* BOYCOR */}
-            <div class="relative group">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-background border-4 border-muted-foreground group-hover:border-foreground transition-colors"></div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
-                <div>
-                  <h4 class="text-lg font-bold text-foreground">Técnico de Soporte Informático (Help Desk)</h4>
-                  <p class="text-muted-foreground font-mono text-sm">BOYCOR</p>
-                </div>
-                <span class="text-xs font-mono bg-muted border border-border text-foreground px-3 py-1 rounded-full whitespace-nowrap w-fit">Junio 2024 – Julio 2024</span>
-              </div>
-              <ul class="space-y-3 mt-4 text-muted-foreground">
-                <li class="flex items-start gap-3">
-                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-foreground/30 shrink-0"></span>
-                  <span class="text-sm leading-relaxed">Atención técnica de primer nivel para usuarios de la compañía, diagnosticando problemas en equipos informáticos y garantizando la continuidad operativa.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-foreground/30 shrink-0"></span>
-                  <span class="text-sm leading-relaxed">Despliegue y configuración de hardware y software en puestos de trabajo.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-foreground/30 shrink-0"></span>
-                  <span class="text-sm leading-relaxed">Escalado de incidencias complejas y aplicación de protocolos de seguridad y respaldo de información corporativa.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* VALEO */}
-            <div class="relative group">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-background border-4 border-muted-foreground group-hover:border-foreground transition-colors"></div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-2">
-                <div>
-                  <h4 class="text-lg font-bold text-foreground">Técnico de Soporte Informático (Help Desk)</h4>
-                  <p class="text-muted-foreground font-mono text-sm">Valeo SE</p>
-                </div>
-                <span class="text-xs font-mono bg-muted border border-border text-foreground px-3 py-1 rounded-full whitespace-nowrap w-fit">Marzo 2024 – Junio 2024</span>
-              </div>
-              <ul class="space-y-3 mt-4 text-muted-foreground">
-                <li class="flex items-start gap-3">
-                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-foreground/30 shrink-0"></span>
-                  <span class="text-sm leading-relaxed">Registro, seguimiento y resolución de incidencias técnicas de hardware y software mediante el sistema de ticketing <strong class="text-foreground font-semibold">Jira</strong>.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-foreground/30 shrink-0"></span>
-                  <span class="text-sm leading-relaxed">Soporte remoto a usuarios corporativos utilizando <strong class="text-foreground font-semibold">BeyondTrust</strong>, minimizando tiempos de inactividad de los equipos de trabajo.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-foreground/30 shrink-0"></span>
-                  <span class="text-sm leading-relaxed">Administración de usuarios en entornos <strong class="text-foreground font-semibold">Windows 10/11</strong> y gestión de accesos, credenciales y permisos mediante <strong class="text-foreground font-semibold">Active Directory</strong>.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-foreground/30 shrink-0"></span>
-                  <span class="text-sm leading-relaxed">Diagnóstico y resolución de incidencias de conectividad en red local, con especial foco en el mantenimiento y estabilidad de la infraestructura Wi-Fi.</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Educación */}
-        <section>
-          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-foreground">
-            <GraduationCap className="w-6 h-6 text-muted-foreground" /> Formación Académica
-          </h3>
-          <div class="space-y-8 border-l-2 border-border pl-6 ml-3">
-            
-            <div class="relative group">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-background border-4 border-muted-foreground group-hover:border-foreground transition-colors"></div>
-              <h4 class="text-lg font-bold text-foreground">Desarrollo Front-end con React</h4>
-              <p class="text-muted-foreground font-mono text-sm mt-1">OpenWebinars <span class="mx-2 opacity-50">•</span> 2025</p>
-            </div>
-            
-            <div class="relative group">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-background border-4 border-muted-foreground group-hover:border-foreground transition-colors"></div>
-              <h4 class="text-lg font-bold text-foreground leading-tight">CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h4>
-              <p class="text-muted-foreground font-mono text-sm mt-1">IES Fernando III <span class="mx-2 opacity-50">•</span> 2024 – En curso</p>
-            </div>
-
-            <div class="relative group">
-              <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-background border-4 border-muted-foreground group-hover:border-foreground transition-colors"></div>
-              <h4 class="text-lg font-bold text-foreground leading-tight">CFGM Sistemas Microinformáticos y Redes (SMR)</h4>
-              <p class="text-muted-foreground font-mono text-sm mt-1">IES Miguel Sánchez López <span class="mx-2 opacity-50">•</span> 2022 – 2024</p>
-            </div>
-
-          </div>
-        </section>
-
-      </div>
-
-      {/* Columna Derecha (Secundaria: Skills e Info) */}
-      <div class="lg:col-span-1 space-y-10">
-        
-        <section>
-          <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-foreground">
-            <Wrench className="w-6 h-6 text-muted-foreground" /> Stack Técnico
-          </h3>
-
-          <div class="space-y-4">
-            
-            {/* Sistemas */}
-            <div class="bg-muted/30 p-5 rounded-xl border border-border hover:border-foreground/30 transition-colors">
-              <h4 class="font-bold flex items-center gap-2 mb-4 text-foreground">
-                <Server className="w-4 h-4 text-muted-foreground"/> Sistemas & Redes
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                {['Windows 10/11', 'Active Directory', 'Redes Wi-Fi', 'Windows Server', 'Linux', 'Ubuntu Server'].map((skill) => (
-                  <span class="px-2.5 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground shadow-sm">{skill}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Desarrollo */}
-            <div class="bg-muted/30 p-5 rounded-xl border border-border hover:border-foreground/30 transition-colors">
-              <h4 class="font-bold flex items-center gap-2 mb-4 text-foreground">
-                <Code className="w-4 h-4 text-muted-foreground"/> Desarrollo
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                {['Java', 'Python', 'Flutter', 'Dart', 'Angular', 'React', 'TypeScript', 'JS / HTML / CSS', 'MySQL', 'MongoDB'].map((skill) => (
-                  <span class="px-2.5 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground shadow-sm">{skill}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Herramientas */}
-            <div class="bg-muted/30 p-5 rounded-xl border border-border hover:border-foreground/30 transition-colors">
-              <h4 class="font-bold flex items-center gap-2 mb-4 text-foreground">
-                <Terminal className="w-4 h-4 text-muted-foreground"/> Herramientas
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                {['Jira (Ticketing)', 'Git & GitHub', 'BeyondTrust', 'SSH'].map((skill) => (
-                  <span class="px-2.5 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground shadow-sm">{skill}</span>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Info Adicional */}
-        <section>
-          <h3 class="text-xl font-bold mb-4 border-b border-border pb-2 text-foreground">Info Adicional</h3>
-          <ul class="space-y-4 text-sm text-muted-foreground">
-            <li class="flex flex-col gap-1">
-              <strong class="text-foreground">Idiomas</strong> 
-              <span class="font-mono text-xs">Inglés técnico (lectura y documentación)</span>
-            </li>
-            <li class="flex flex-col gap-1">
-              <strong class="text-foreground">Carnet de conducir</strong> 
-              <span class="font-mono text-xs">Clase B</span>
-            </li>
-          </ul>
-        </section>
-
-      </div>
-
+    {/* Resumen Breve */}
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <p class="text-muted-foreground leading-relaxed text-lg">
+        Técnico en Sistemas Microinformáticos y Redes con experiencia en soporte y administración de sistemas. 
+        Actualmente cursando DAM para especializarme en desarrollo de software, combinando así la infraestructura 
+        física con el desarrollo lógico multiplataforma.
+      </p>
     </div>
+
+    {/* Visualizador de PDF */}
+    <div class="flex flex-col items-center">
+      <div class="w-full flex items-center justify-between mb-4 px-2">
+        <h3 class="text-xl font-bold flex items-center gap-2 text-foreground">
+          <FileText className="w-5 h-5"/> Visualización del Documento
+        </h3>
+      </div>
+      
+      <div class="w-full h-[80vh] min-h-[600px] rounded-xl overflow-hidden border border-border bg-muted/30 shadow-lg relative">
+        <object data="/cv-eduardo-cruz.pdf" type="application/pdf" class="w-full h-full">
+          {/* Fallback si el navegador no puede mostrar PDFs (ej. algunos móviles) */}
+          <div class="flex flex-col items-center justify-center h-full p-8 text-center bg-card">
+            <FileText className="w-16 h-16 text-muted-foreground mb-4 opacity-50"/>
+            <p class="mb-6 text-foreground font-medium">Tu navegador no soporta la previsualización directa de PDFs.</p>
+            <a href="/cv-eduardo-cruz.pdf" download class="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-lg font-mono text-sm hover:opacity-90 transition-opacity">
+              <Download className="w-4 h-4" /> Descargar el Currículum
+            </a>
+          </div>
+        </object>
+      </div>
+    </div>
+
   </main>
 </Layout>
