@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/ui/Header';
 import { 
   Download, Briefcase, GraduationCap, Wrench, 
-  Server, Code, Terminal, Mail, MapPin, User
+  Server, Code, Terminal, Mail, MapPin, User, Phone
 } from 'lucide-react';
 ---
 
@@ -29,6 +29,7 @@ import {
           <h2 class="text-xl text-muted-foreground font-mono mb-5">Técnico de Soporte IT | Desarrollador Junior</h2>
           <div class="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-3 text-sm text-muted-foreground">
             <a href="mailto:educruzm2004@gmail.com" class="flex items-center gap-2 hover:text-foreground transition-colors"><Mail className="w-4 h-4"/> educruzm2004@gmail.com</a>
+            <span class="flex items-center gap-2"><Phone className="w-4 h-4"/> 662046087</span>
             <span class="flex items-center gap-2"><MapPin className="w-4 h-4"/> Martos, Jaén</span>
           </div>
         </div>
@@ -50,12 +51,9 @@ import {
           <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-foreground">
             <User className="w-6 h-6 text-muted-foreground" /> Perfil Profesional
           </h3>
-          <div class="bg-muted/30 p-6 rounded-2xl border border-border relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-1 h-full bg-foreground/20"></div>
-            <p class="text-muted-foreground leading-relaxed text-sm md:text-base text-justify">
-              Técnico en Sistemas Microinformáticos y Redes con experiencia operativa en soporte a usuarios (Nivel 1 y 2), gestión de incidencias corporativas y administración básica de sistemas. Actualmente cursando el CFGS en Desarrollo de Aplicaciones Multiplataforma para complementar el perfil de infraestructura con competencias en ingeniería de software. Orientado a posiciones de Soporte IT y Desarrollo Junior, aportando una visión técnica integral desde el hardware hasta el código.
-            </p>
-          </div>
+          <p class="text-muted-foreground leading-relaxed">
+            Técnico en Sistemas Microinformáticos y Redes con experiencia operativa en soporte a usuarios (Nivel 1 y 2), gestión de incidencias corporativas y administración básica de sistemas. Actualmente cursando el CFGS en Desarrollo de Aplicaciones Multiplataforma para complementar el perfil de infraestructura con competencias en ingeniería de software. Orientado a posiciones de Soporte IT y Desarrollo Junior, aportando una visión técnica integral desde el hardware hasta el código.
+          </p>
         </section>
 
         {/* Experiencia */}
@@ -63,7 +61,7 @@ import {
           <h3 class="text-2xl font-bold mb-8 flex items-center gap-3 text-foreground">
             <Briefcase className="w-6 h-6 text-muted-foreground" /> Experiencia Profesional
           </h3>
-          <div class="space-y-10 border-l-2 border-border pl-6 ml-3">
+          <div class="space-y-12 border-l-2 border-border pl-6 ml-3">
             
             {/* BOYCOR */}
             <div class="relative group">
@@ -170,7 +168,7 @@ import {
                 <Server className="w-4 h-4 text-muted-foreground"/> Sistemas & Redes
               </h4>
               <div class="flex flex-wrap gap-2">
-                {['Windows 10/11', 'Active Directory', 'Redes Wi-Fi', 'Windows Server', 'Linux', 'Ubuntu Server'].map((skill) => (
+                {['Windows', 'Ubuntu Server', 'Linux'].map((skill) => (
                   <span class="px-2.5 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground shadow-sm">{skill}</span>
                 ))}
               </div>
@@ -182,7 +180,7 @@ import {
                 <Code className="w-4 h-4 text-muted-foreground"/> Desarrollo
               </h4>
               <div class="flex flex-wrap gap-2">
-                {['Java', 'Python', 'Flutter', 'Dart', 'Angular', 'React', 'TypeScript', 'JS / HTML / CSS', 'MySQL', 'MongoDB'].map((skill) => (
+                {['Java', 'Dart', 'Flutter', 'Python', 'MySQL', 'CSS', 'PostgreSQL', 'MongoDB', 'JavaScript', 'TypeScript', 'Angular', 'HTML'].map((skill) => (
                   <span class="px-2.5 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground shadow-sm">{skill}</span>
                 ))}
               </div>
@@ -194,7 +192,7 @@ import {
                 <Terminal className="w-4 h-4 text-muted-foreground"/> Herramientas
               </h4>
               <div class="flex flex-wrap gap-2">
-                {['Jira (Ticketing)', 'Git & GitHub', 'BeyondTrust', 'SSH'].map((skill) => (
+                {['Git & GitHub'].map((skill) => (
                   <span class="px-2.5 py-1 bg-background border border-border rounded-md text-xs font-mono text-muted-foreground shadow-sm">{skill}</span>
                 ))}
               </div>
@@ -209,7 +207,7 @@ import {
           <ul class="space-y-4 text-sm text-muted-foreground">
             <li class="flex flex-col gap-1">
               <strong class="text-foreground">Idiomas</strong> 
-              <span class="font-mono text-xs">Inglés técnico (lectura y documentación)</span>
+              <span class="font-mono text-xs">Inglés técnico (lectura y documentación).</span>
             </li>
             <li class="flex flex-col gap-1">
               <strong class="text-foreground">Carnet de conducir</strong> 
