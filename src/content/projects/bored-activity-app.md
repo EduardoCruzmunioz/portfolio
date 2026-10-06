@@ -4,6 +4,7 @@ description: "Aplicación web que consume una API pública para sugerir activida
 technologies: ["TypeScript", "CSS", "HTML", "API REST"]
 category: "web"
 githubUrl: "https://github.com/EduardoCruzmunioz/bored-activity-app"
+liveUrl: "https://eduardocruzdev-bored.netlify.app/"
 featured: true
 order: 5
 ---
