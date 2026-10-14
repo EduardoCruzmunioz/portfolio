@@ -1,18 +1,10 @@
 ---
 title: "Formulario de Seguros"
 description: "Sistema de formularios web para cotización y gestión de seguros con validación de datos, cálculo de primas y generación de documentos automática."
-technologies:
-  [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "PHP",
-    "MySQL",
-    "API REST",
-    "Validación de Formularios",
-  ]
+technologies: ["HTML5", "CSS3", "TypeScript"]
 category: "web"
 githubUrl: "https://github.com/EduardoCruzmunioz/formulario-seguros"
+liveUrl: "https://eduardocruzdev-formularioseguro.netlify.app/"
 featured: true
 order: 7
 ---
