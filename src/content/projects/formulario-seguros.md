@@ -4,7 +4,7 @@ description: "Sistema de formularios web para cotización y gestión de seguros 
 technologies: ["HTML5", "CSS3", "TypeScript"]
 category: "web"
 githubUrl: "https://github.com/EduardoCruzmunioz/formulario-seguros"
-liveUrl: "https://eduardocruzdev-formularioseguro.netlify.app/"
+liveUrl: "https://eduardocruzdev-fromularioseguro.netlify.app"
 featured: true
 order: 7
 ---
