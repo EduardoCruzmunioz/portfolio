@@ -1,6 +1,6 @@
 ---
-title: "Formulario de Seguridad"
-description: "Sistema de formularios web con validación avanzada, encriptación de datos y cumplimiento de estándares de seguridad para la recogida de información sensible."
+title: "Formulario de Seguros"
+description: "Sistema de formularios web para cotización y gestión de seguros con validación de datos, cálculo de primas y generación de documentos automática."
 technologies:
   [
     "HTML5",
@@ -8,29 +8,30 @@ technologies:
     "JavaScript",
     "PHP",
     "MySQL",
-    "HTTPS",
+    "API REST",
     "Validación de Formularios",
   ]
 category: "web"
-githubUrl: "https://github.com/EduardoCruzmunioz/formulario-seguridad"
+githubUrl: "https://github.com/EduardoCruzmunioz/formulario-seguros"
 featured: true
 order: 7
 ---
 
 ## Sobre el Proyecto
 
-Sistema de formularios web diseñado para la recogida segura de información sensible, implementando múltiples capas de validación, encriptación de datos y cumplimiento de estándares de seguridad esenciales. El proyecto incluye validación en tiempo real, prevención de ataques comunes y una arquitectura robusta para la protección de datos personales.
+Sistema de formularios web especializado para la gestión y cotización de seguros. Incluye la recogida de información para diferentes tipos de seguros (vehículos, vida, hogar), cálculo automático de primas basado en riesgo, y generación de documentos y cotizaciones personalizadas. El proyecto implementa flujos de trabajo eficientes para la gestión de pólizas y una interfaz optimizada para la experiencia del usuario.
 
 ---
 
 ## Funcionalidades Principales
 
-- **Validación de datos en cliente yidor:** Implementación de validaciones tanto en frontend (JavaScript) como en backend (PHP) para asegurar la integridad de la información.
-- **Encriptación de datos:** Uso de HTTPS para la transmisión segura de datos y encriptación de campos sensibles antes de su almacenamiento en la base de datos.
-- **Prevención de ataques:** Implementación de medidas contra XSS, SQL Injection y CSRF mediante técnicas de programación segura.
-- **Interfaz de usuario responsive:** Diseño adaptable a diferentes dispositivos manteniendo la usabilidad y la experiencia del usuario.
-- **Gestion de errores:** Sistema de manejo de errores informativo que guía al usuario sin revelar información sensible del sistema.
+- **Cotización automática de primas:** Cálculo dinámico del precio del seguro basado en factores de riesgo y datos del usuario.
+- **Múltiples tipos de seguros:** Soporte para diferentes categorías de seguros con campos y validaciones específicas.
+- **Validación de datos en tiempo real:** Verificación de información en frontend y backend para asegurar la precisión de los datos.
+- **Generación de documentos:** Creación automática de cotizaciones, pólizas y documentos relacionados.
+- **Gestión de pólizas:** Sistema para el seguimiento, renovación y gestión de seguros contratacidos.
+- **Interfaz responsive:** Diseño adaptable para una experiencia óptima en escritorio y dispositivos móviles.
 
 ## Lo que demuestra
 
-Dominio de conceptos de seguridad web esenciales, desarrollo full-stack con buenas prácticas de programación y capacidad para crear aplicaciones que cumplan con estándares de protección de datos. Demostración de comprensión de vulnerabilidades comunes y técnicas de mitigación, así como experiencia en creación de interfaz de usuario funcional y accesible.
+Capacidad para desarrollar aplicaciones web complejas con lógica de negocio específica, manejo de bases de datos relacionales y creación de flujos de trabajo automatizados. Demostración de habilidades en validación de formularios, cálculos financieros y gestión de datos, así como experiencia en creación de interfaz de usuario funcional y accesible para dominios de negocio específicos.
