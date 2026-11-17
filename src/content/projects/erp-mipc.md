@@ -5,7 +5,7 @@ technologies: ["Java", "Bases de Datos", "POO"]
 category: "desktop"
 githubUrl: "https://github.com/EduardoCruzmunioz/erp-mipc"
 featured: true
-order: 1
+order: 3
 ---
 
 ## Sobre el Proyecto

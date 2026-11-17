@@ -6,7 +6,7 @@ category: "web"
 githubUrl: "https://github.com/EduardoCruzmunioz/bored-activity-app"
 liveUrl: "https://eduardocruzdev-bored.netlify.app/"
 featured: true
-order: 5
+order: 6
 ---
 
 ## Sobre el Proyecto
